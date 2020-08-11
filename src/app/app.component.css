@@ -16,7 +16,6 @@ footer{
     /* .set the height of the footer */
     /* the default height of the toolbar is 64px */
     height: 64px;
-    position: static;
 }
 
 .example-spacer {
@@ -25,10 +24,6 @@ footer{
 
 .example-icon {
     padding: 0 16px;
-}
-
-router-outlet {
-    position: absolute;
 }
 
 /* .example-headers-align .mat-expansion-panel-header-title,
