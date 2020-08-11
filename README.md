@@ -22,7 +22,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Deployment
+## Deploy to Github Pages
 
 `ng build --prod=true --outputPath=docs --baseHref="https://jfulgoni.github.io/angular-playground/"`
 
