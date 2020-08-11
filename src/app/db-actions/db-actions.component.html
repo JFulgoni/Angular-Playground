@@ -10,7 +10,7 @@
     <mat-card>
         <mat-card-header>
             <mat-card-title-group>
-                <mat-card-title>Actions</mat-card-title>
+                <mat-card-title>Generic Actions</mat-card-title>
                 <mat-card-subtitle>Choose an Action from the drop down list below</mat-card-subtitle>
             </mat-card-title-group>
         </mat-card-header>
@@ -53,6 +53,21 @@
                     </mat-expansion-panel-header>
                     <p>I'm visible because I am open</p>
                 </mat-expansion-panel>
+            </mat-accordion>
+        </mat-card-content>
+    </mat-card>
+    <br />
+    <!-- <mat-divider [inset]="true"></mat-divider> -->
+    <br />
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>Classic WoW</mat-card-title>
+                <mat-card-subtitle>Choose an Action from the drop down list below</mat-card-subtitle>
+            </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-accordion class="example-headers-align">
                 <mat-expansion-panel (closed)="resetAllFields()">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
@@ -60,7 +75,7 @@
                         </mat-panel-title>
                         <mat-panel-description>
                             Type your character's name
-                            <mat-icon>assignment</mat-icon>
+                            <mat-icon>account_circle</mat-icon>
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <mat-form-field>
@@ -70,8 +85,8 @@
                         (click)="getCharacterInformation()">Submit</button>
                     <mat-divider *ngIf="resultMessage" [inset]="true"></mat-divider>
                     <div class="valign-center" style="padding-top: 14px;">
-                        <mat-icon *ngIf="success" color="primary" style="padding-right: 14px;">done</mat-icon>
-                        <mat-icon *ngIf="failure" color="accent" style="padding-right: 14px;">error</mat-icon>
+                        <mat-icon *ngIf="characterSuccess" color="primary" style="padding-right: 14px;">done</mat-icon>
+                        <mat-icon *ngIf="characterFailure" color="accent" style="padding-right: 14px;">error</mat-icon>
                         <span *ngIf="resultMessage">{{resultMessage}}</span>
                     </div>
                 </mat-expansion-panel>
@@ -82,7 +97,7 @@
                         </mat-panel-title>
                         <mat-panel-description>
                             View the list of Raids in Classic WoW
-                            <mat-icon>date_range</mat-icon>
+                            <mat-icon>gavel</mat-icon>
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <mat-list>
@@ -92,6 +107,6 @@
                     </mat-list>
                 </mat-expansion-panel>
             </mat-accordion>
-        </mat-card-content>
+        </mat-card-content>   
     </mat-card>
 </mat-card>

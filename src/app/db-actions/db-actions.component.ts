@@ -13,6 +13,8 @@ export class DbActionsComponent implements OnInit {
   resultMessage = '';
   failure = false;
   success = false;
+  characterSuccess = false;
+  characterFailure = false;
   panelOpenState = false;
   characterName = '';
   raids = [];
@@ -45,8 +47,7 @@ export class DbActionsComponent implements OnInit {
     },
       error => {
         if (error) {
-          console.log(error);
-          this.resultMessage = error.statusText + " (" + error.status + ") : " + error.error;
+          this.resultMessage = "Operation not supported!";
           this.failure = true;
         }
       });
@@ -56,13 +57,15 @@ export class DbActionsComponent implements OnInit {
     this.databaseService.getParse(this.characterName).subscribe(res => {
       console.log(res);
       this.resultMessage = "Success!";
-      this.success = true;
+      this.characterSuccess = true;
+      this.characterFailure = false;
     },
       error => {
         if (error) {
           console.log(error);
-          this.resultMessage = error.statusText + " (" + error.status + ") : " + error.error;
-          this.failure = true;
+          this.resultMessage = error.statusText + " (" + error.status + ") : " + error.error.error;
+          this.characterFailure = true;
+          this.characterSuccess = false;
         }
       });
   }
