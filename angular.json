@@ -123,6 +123,7 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
+          "baseHref": "https://jfulgoni.github.io/angular-playground/",
           "options": {}
         }
       }
