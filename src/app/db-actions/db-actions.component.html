@@ -91,7 +91,7 @@
                         <span *ngIf="resultMessage">{{resultMessage}}</span>
                     </div>
                 </mat-expansion-panel>
-                <mat-expansion-panel (opened)="getZones()" (closed)="clearZones()">
+                <mat-expansion-panel>
                     <mat-expansion-panel-header>
                         <mat-panel-title>
                             Zones
@@ -101,11 +101,9 @@
                             <mat-icon>gavel</mat-icon>
                         </mat-panel-description>
                     </mat-expansion-panel-header>
-                    <mat-list>
-                        <mat-list-item *ngFor="let raid of raids">
-                            {{raid.name}}
-                        </mat-list-item>
-                    </mat-list>
+                    Click to view the list of Raid encounters.
+                    <button style="float: inline-end" mat-raised-button color="primary" 
+                        (click)="goToRaids()">Submit</button>
                 </mat-expansion-panel>
             </mat-accordion>
         </mat-card-content>   

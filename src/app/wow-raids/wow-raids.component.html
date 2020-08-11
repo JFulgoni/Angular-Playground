@@ -1,0 +1,12 @@
+<mat-card class="card-wrapper">
+    <mat-grid-list cols="2" rowHeight="400px">
+        <mat-grid-tile>
+            <mat-action-list>
+                <button mat-list-item *ngFor="let raid of raids" (click)="display(raid.name)" > {{ raid.name }} </button>
+            </mat-action-list>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            {{raidToDisplay}}
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>

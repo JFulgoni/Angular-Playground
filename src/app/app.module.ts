@@ -10,12 +10,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatGridListModule} from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -30,6 +32,7 @@ import { HelpComponent } from './help/help.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { WowRaidsComponent } from './wow-raids/wow-raids.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     DbActionsComponent,
     HelpComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    WowRaidsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -61,7 +65,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     NgxChartsModule,
     MatMenuModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSidenavModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DatabaseService } from '../shared/database/database.service'
 
 @Component({
@@ -17,9 +18,9 @@ export class DbActionsComponent implements OnInit {
   characterFailure = false;
   panelOpenState = false;
   characterName = '';
-  raids = [];
 
-  constructor(private databaseService: DatabaseService) { }
+
+  constructor(private databaseService: DatabaseService, private router: Router) { }
 
   ngOnInit() {
     this.resetAllFields();
@@ -70,33 +71,6 @@ export class DbActionsComponent implements OnInit {
       });
   }
 
-  getZones() {
-    this.databaseService.getZones().subscribe(res => {
-      console.log(res);
-      this.resultMessage = "Success!";
-      this.success = true;
-      this.raids = []
-      res.forEach(zone => {
-        let raid = {
-          "name": zone.name
-        };
-        this.raids.push(raid);
-      });
-    },
-      error => {
-        if (error) {
-          console.log(error);
-          this.resultMessage = error.statusText + " (" + error.status + ") : " + error.error;
-          this.failure = true;
-          this.raids = [{"name": "Unable to find any raids"}]
-        }
-      });
-  }
-
-  clearZones() {
-    this.raids = [];
-  }
-
   allValuesPresent() {
     return this.validateString(this.firstName) && this.validateNumeric(this.age);
   }
@@ -111,6 +85,10 @@ export class DbActionsComponent implements OnInit {
 
   validateNumeric(string: String) {
     return this.validateString(string) && !isNaN(+string) && !string.endsWith('.');
+  }
+
+  goToRaids() {
+    this.router.navigateByUrl('/raids');
   }
 
 }

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DbActionsComponent } from './db-actions/db-actions.component';
 import { HelpComponent } from './help/help.component';
 import { LoginComponent } from './login/login.component';
+import { WowRaidsComponent } from './wow-raids/wow-raids.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'raids',
+    component: WowRaidsComponent
   }
 ];
 
