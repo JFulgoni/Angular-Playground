@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="example-headers-align">
+    <mat-toolbar-row [class.mat-elevation-z8]="true">
+        <span>Welcome to John's Angular Project!</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button aria-label="Home Button" [routerLink]="['/actions']">
+            <mat-icon>home</mat-icon>
+        </button>
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item [routerLink]="['/login']">
+                <mat-icon>vpn_key</mat-icon><span>Logout</span>
+            </button>
+            <button mat-menu-item [routerLink]="['/help']">
+                <mat-icon>help</mat-icon><span>Help</span>
+            </button>
+        </mat-menu>
+        <button mat-icon-button aria-label="Vertical Menu Button" [matMenuTriggerFor]="appMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,74 @@
+@import '~@angular/material/theming';
+$md-fratwhaleblue: (
+    50: #e6eaf1,
+    100: #bec9dd,
+    200: #95a7c5,
+    300: #6c85ae,
+    400: #4a6b9f,
+    500: #245391,
+    600: #1c4b88,
+    700: #11427d,
+    800: #083870,
+    900: #002859,
+    A100: #bec9dd,
+    A200: #95a7c5,
+    A400: #4a6b9f,
+    A700: #11427d,
+    contrast: (
+        50: #ffffff,
+        100: #ffffff,
+        200: #ffffff,
+        300: #ffffff,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #ffffff,
+        A200: #ffffff,
+        A400: #ffffff,
+        A700: #ffffff,
+    )
+
+);
+
+$md-fratwhalepink: (
+    50: #fce8ed,
+    100: #f9c6d3,
+    200: #f6a3b6,
+    300: #f5809a,
+    400: #f56884,
+    500: #f5576f,
+    600: #e3516c,
+    700: #cd4b66,
+    800: #b84562,
+    900: #933959,
+    A100: #f9c6d3,
+    A200: #f6a3b6,
+    A400: #f56884,
+    A700: #cd4b66,
+    contrast: (
+        50: #ffffff,
+        100: #ffffff,
+        200: #ffffff,
+        300: #ffffff,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #ffffff,
+        A200: #ffffff,
+        A400: #ffffff,
+        A700: #ffffff,
+    )
+);
+
+@include mat-core();
+$custom-theme-primary: mat-palette($md-fratwhalepink);
+$custom-theme-accent: mat-palette($md-fratwhaleblue);
+$custom-theme-warn: mat-palette($md-fratwhalepink, A700);
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+@include angular-material-theme($custom-theme);
