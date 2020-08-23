@@ -8,8 +8,11 @@ import { DatabaseService } from '../shared/database/database.service'
 })
 export class WowRaidsComponent implements OnInit {
 
-  raids = [];
-  raidToDisplay = 'Unknown';
+  raids = [{
+    "name" : "Loading...", 
+    "bosses" : []
+  }];
+  bosses = ['Select a Raid in the left panel.'];
 
   constructor(private databaseService: DatabaseService) { }
 
@@ -19,12 +22,13 @@ export class WowRaidsComponent implements OnInit {
 
   getZones() {
     this.databaseService.getZones().subscribe(res => {
-      console.log(res);
+      // console.log(res);
       this.raids = []
       res.forEach(zone => {
         var raid = {
           "name": zone.name,
-          "id": zone.id
+          "id": zone.id,
+          "bosses" : this.getBosses(zone.encounters)
         };
         if (raid.id.toString().startsWith("10")) {
           this.raids.push(raid);
@@ -34,18 +38,31 @@ export class WowRaidsComponent implements OnInit {
       error => {
         if (error) {
           console.log(error);
-          this.raids = [{"name": "Error"}]
+          this.raids = [{"name": "Error", "bosses" : []}]
         }
       });
-    console.log("Raids", this.raids);
+    // console.log("Raids", this.raids);
   }
 
   clearZones() {
     this.raids = [];
+    this.bosses = ['Select a Raid in the left panel.'];
   }
 
   display(raid: string) {
-    this.raidToDisplay = raid;
+    this.raids.forEach(myraid => {
+      if (myraid.name == raid) {
+        this.bosses = myraid.bosses;
+      }
+    });
+  }
+
+  getBosses(encounters = []) {
+    let bosses = []
+    encounters.forEach( encounter => {
+      bosses.push(encounter.name);
+    });
+    return bosses;
   }
 
 }

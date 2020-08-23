@@ -1,12 +1,27 @@
-<mat-card class="card-wrapper">
-    <mat-grid-list cols="2" rowHeight="400px">
-        <mat-grid-tile>
-            <mat-action-list>
-                <button mat-list-item *ngFor="let raid of raids" (click)="display(raid.name)" > {{ raid.name }} </button>
-            </mat-action-list>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            {{raidToDisplay}}
-        </mat-grid-tile>
-    </mat-grid-list>
-</mat-card>
+<header>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>Classic WoW Raids</span>
+            <span class="example-spacer"></span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</header>
+<div class="card-wrapper">
+    <mat-card>
+        <mat-grid-list cols="3" rowHeight="500px">
+            <mat-grid-tile>
+                <mat-action-list>
+                    <button mat-list-item *ngFor="let raid of raids" (click)="display(raid.name)" > {{ raid.name }} </button>
+                </mat-action-list>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-list>
+                    <mat-list-item *ngFor="let boss of bosses"> {{ boss }} </mat-list-item>
+                </mat-list>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                Descriptions to come!
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+</div>
