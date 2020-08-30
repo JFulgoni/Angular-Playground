@@ -24,7 +24,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Deploy to Github Pages
 
-`ng build --prod=true --outputPath=docs --baseHref="https://jfulgoni.github.io/angular-playground/"`
+`ng build --prod=true --outputPath=docs --baseHref="https://jfulgoni.github.io/Angular-Playground/"`
 
 `cp docs/index.html docs/404.html`
 
