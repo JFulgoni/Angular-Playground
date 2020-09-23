@@ -11,7 +11,8 @@
         <mat-grid-list cols="3" rowHeight="500px">
             <mat-grid-tile>
                 <mat-action-list>
-                    <button mat-list-item *ngFor="let raid of raids" (click)="display(raid.name)" > {{ raid.name }} </button>
+                    <button mat-list-item *ngFor="let raid of raids" (click)="display(raid.name)"> {{ raid.name }}
+                    </button>
                 </mat-action-list>
             </mat-grid-tile>
             <mat-grid-tile>
@@ -23,5 +24,32 @@
                 Descriptions to come!
             </mat-grid-tile>
         </mat-grid-list>
+    </mat-card>
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+    <mat-card>
+        <mat-form-field>
+            <input matInput type="test" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+        <table mat-table [dataSource]="currentRoster" matSort style="width: 100%;flex: auto;">
+            <ng-container matColumnDef="order">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef>Order</th>
+                <td mat-cell *matCellDef="let raider">{{raider.order}}</td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let raider">{{raider.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="role">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef>Class</th>
+                <td mat-cell *matCellDef="let raider">{{raider.role}}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+        </table>
+        <mat-paginator [length]="pagelength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+            (page)="pageEvent = $event">
+        </mat-paginator>
     </mat-card>
 </div>
