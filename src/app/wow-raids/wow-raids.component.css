@@ -1,7 +1,13 @@
-.card-wrapper{
-    height:100%;
-    padding-top: 2%;
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-bottom: 1%;
-  }
+.card-wrapper {
+  height: 100%;
+  padding-top: 2%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+}
+
+.wow-icon {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}

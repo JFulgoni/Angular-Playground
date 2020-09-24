@@ -96,4 +96,8 @@ export class WowRaidsComponent implements OnInit {
     this.currentRoster.filter = value.trim().toLocaleLowerCase();
   }
 
+  getPicture(role: String): String {
+    return this.wowConstantsService.iconMap[role.toLocaleLowerCase()];
+  }
+
 }

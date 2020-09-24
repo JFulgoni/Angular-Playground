@@ -34,7 +34,7 @@ export class WowConstantsService {
     new Raider(25, 'Ruckfobey', 'Hunter'),
     new Raider(26, 'Illpwnutoo', 'Warlock'),
     new Raider(27, 'Krprincess', 'Warlock'),
-    new Raider(28, 'Shapes', 'Tank'),
+    new Raider(28, 'Shapes', 'Feral'),
     new Raider(29, 'Hiboufache', 'Druid'),
     new Raider(30, 'Thehammr', 'Druid'),
     new Raider(31, 'Kendrick', 'Rogue'),
@@ -52,11 +52,12 @@ export class WowConstantsService {
     new Raider(43, 'Jackblack', 'Warrior'),
     new Raider(44, 'Deadwin', 'Warrior'),
     new Raider(45, 'Knivesout', 'Rogue'),
-    new Raider(46, 'Esfand', "Retribution")
+    new Raider(46, 'Esfand', 'Retribution')
   ];
 
   roleLimits = {
     "tank": 4,
+    "feral": 1,
     "warrior": 10,
     "paladin": 5,
     "hunter": 2,
@@ -67,6 +68,21 @@ export class WowConstantsService {
     "priest": 6,
     "shadow": 0,
     "retribution:": 0
+  }
+
+  iconMap = {
+    "tank": "assets/wow-icons/Ui-charactercreate-classes_warrior.png",
+    "feral": "assets/wow-icons/Ui-charactercreate-classes_druid.png",
+    "warrior": "assets/wow-icons/Ui-charactercreate-classes_warrior.png",
+    "paladin": "assets/wow-icons/Ui-charactercreate-classes_paladin.png",
+    "hunter": "assets/wow-icons/Ui-charactercreate-classes_hunter.png",
+    "rogue": "assets/wow-icons/Ui-charactercreate-classes_rogue.png",
+    "druid": "assets/wow-icons/Ui-charactercreate-classes_druid.png",
+    "mage": "assets/wow-icons/Ui-charactercreate-classes_mage.png",
+    "warlock": "assets/wow-icons/Ui-charactercreate-classes_warlock.png",
+    "priest": "assets/wow-icons/Ui-charactercreate-classes_priest.png",
+    "shadow": "assets/wow-icons/Ui-charactercreate-classes_priest.png",
+    "retribution": "assets/wow-icons/Ui-charactercreate-classes_paladin.png"
   }
 
   raidSize = 40;
@@ -83,6 +99,7 @@ export class WowConstantsService {
   createRoleMap(): Map<String, number> {
     return new Map([
       ['tank', 0],
+      ['feral', 0],
       ['warrior', 0],
       ['paladin', 0],
       ['hunter', 0],

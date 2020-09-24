@@ -47,7 +47,8 @@
             </ng-container>
             <ng-container matColumnDef="role">
                 <th mat-header-cell mat-sort-header *matHeaderCellDef>Class</th>
-                <td mat-cell *matCellDef="let raider">{{raider.role}}</td>
+                <td mat-cell *matCellDef="let raider"><img class="wow-icon"
+                        [src]="getPicture(raider.role)"> {{raider.role}}</td>
             </ng-container>
             <ng-container matColumnDef="selected">
                 <th mat-header-cell mat-sort-header *matHeaderCellDef>Selected</th>
