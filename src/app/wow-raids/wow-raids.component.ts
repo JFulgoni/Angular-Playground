@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DatabaseService } from '../shared/database/database.service'
 import { Raider } from '../shared/raider'
+import { WowConstantsService } from '../shared/wow-constants/wow-constants.service';
 
 import { MatSort } from '@angular/material/sort';
 import { PageEvent, MatPaginator } from '@angular/material/paginator';
@@ -12,16 +13,8 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./wow-raids.component.css']
 })
 export class WowRaidsComponent implements OnInit {
-  columnsToDisplay= ['order', 'name', 'role']
-  raiders: Raider[] = [
-    new Raider(1, 'Frat', 'Hunter'),
-    new Raider(2, 'Dredd', 'Tank'),
-    new Raider(3, 'Aquadoria', 'Druid'),
-    new Raider(4, 'Codie', 'Mage'),
-    new Raider(5, 'Faede', 'Rogue'),
-    new Raider(6, 'Murmandamus', 'Tank'),
-    new Raider(7, 'Applesauce', 'Priest')
-  ];
+  columnsToDisplay= ['order', 'name', 'role', 'selected']
+
   currentRoster = new MatTableDataSource<Raider>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -42,7 +35,7 @@ export class WowRaidsComponent implements OnInit {
   }];
   bosses = ['Select a Raid in the left panel.'];
 
-  constructor(private databaseService: DatabaseService) { }
+  constructor(private databaseService: DatabaseService, private wowConstantsService: WowConstantsService) { }
 
   ngAfterViewInit() {
     this.currentRoster.sort = this.sort;
@@ -51,7 +44,7 @@ export class WowRaidsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getZones();
-    this.currentRoster.data = this.raiders;
+    this.currentRoster.data = this.wowConstantsService.getRaiders();
   }
 
   getZones() {

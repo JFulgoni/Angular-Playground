@@ -29,6 +29,10 @@
     <mat-divider></mat-divider>
     <br />
     <mat-card>
+        <mat-card-title-group>
+            <mat-card-title>Arcanite Raiders</mat-card-title>
+            <mat-card-subtitle>View Raider Roster below.</mat-card-subtitle>
+        </mat-card-title-group>
         <mat-form-field>
             <input matInput type="test" (keyup)="doFilter($event.target.value)" placeholder="Filter">
         </mat-form-field>
@@ -44,6 +48,11 @@
             <ng-container matColumnDef="role">
                 <th mat-header-cell mat-sort-header *matHeaderCellDef>Class</th>
                 <td mat-cell *matCellDef="let raider">{{raider.role}}</td>
+            </ng-container>
+            <ng-container matColumnDef="selected">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef>Selected</th>
+                <td mat-cell *matCellDef="let raider" [style.color]="raider.selected == 'YES' ? '#00CC00' : '#CC0000'">
+                    {{raider.selected}}</td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
             <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
