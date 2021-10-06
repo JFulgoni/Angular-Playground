@@ -1,0 +1,29 @@
+<header>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>Stepper Example</span>
+            <span class="example-spacer"></span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</header>
+<div class="card-wrapper">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>Stepper</mat-card-title>
+                <mat-card-subtitle>I know how to make a stepper</mat-card-subtitle>
+            </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-stepper>
+                <mat-step [stepControl]="firstStepFormGroup">
+                    <ng-template matStepLabel>Fill out your name and address</ng-template>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="name" required>
+                    </mat-form-field>
+                </mat-step>
+            </mat-stepper>
+        </mat-card-content>
+    </mat-card>
+</div>

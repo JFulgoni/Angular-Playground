@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DbActionsComponent } from './db-actions/db-actions.component';
 import { HelpComponent } from './help/help.component';
 import { LoginComponent } from './login/login.component';
+import { StepperExampleComponent } from './stepper-example/stepper-example.component';
 import { WowRaidsComponent } from './wow-raids/wow-raids.component';
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'raids',
     component: WowRaidsComponent
+  },
+  {
+    path: 'stepper',
+    component: StepperExampleComponent
   }
 ];
 

@@ -22,6 +22,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatStepperModule } from '@angular/material/stepper';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -33,6 +34,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { WowRaidsComponent } from './wow-raids/wow-raids.component';
+import { StepperExampleComponent } from './stepper-example/stepper-example.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { WowRaidsComponent } from './wow-raids/wow-raids.component';
     HelpComponent,
     LoginComponent,
     NavbarComponent,
-    WowRaidsComponent
+    WowRaidsComponent,
+    StepperExampleComponent
   ],
   imports: [
     AppRoutingModule,
@@ -61,6 +64,7 @@ import { WowRaidsComponent } from './wow-raids/wow-raids.component';
     MatSortModule,
     MatFormFieldModule,
     MatExpansionModule,
+    MatStepperModule,
     FormsModule,
     NgxChartsModule,
     MatMenuModule,
